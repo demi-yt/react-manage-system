@@ -88,6 +88,20 @@ module.exports = {
     ],
     devServer:{
         port: 8086,
+        // 找不到返回指定的页面
+        historyApiFallback:{
+            index: '/dist/index.html'
+        },
+        proxy : {
+            '/manage' : {
+                target: 'http://admintest.happymmall.com',
+                changeOrigin : true
+            },
+            '/user/logout.do' : {
+                target: 'http://admintest.happymmall.com',
+                changeOrigin : true
+            }
+        }
     }
     
 };
