@@ -15,7 +15,7 @@ class User{
         return _index.request({
             type: 'post',
             url: '/manage/user/login.do',
-            data:loginInfo
+            data: loginInfo
         });
     }
     

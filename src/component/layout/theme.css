@@ -86,7 +86,9 @@ p {
     position: relative;
     top: 55px;
 }
-
+.top-navbar{
+    height: 60px;
+}
 .top-navbar .nav > li > a:hover, .top-navbar .nav > li > a:focus {
     text-decoration: none;
     background-color: #2497BA;

@@ -76,7 +76,8 @@ module.exports = {
     plugins: [
         // 处理html文件
         new HtmlWebpackPlugin({
-            template:'./src/index.html'
+            template:'./src/index.html',
+            favicon: './favicon.ico'
         }),
          // 上传css文件的位置(独立css文件)
         new ExtractTextPlugin("css/[name].css"), 
@@ -86,10 +87,9 @@ module.exports = {
             filename: 'js/base.js'
         })
     ],
-    devServer:{
+    devServer: {
         port: 8086,
-        // 找不到返回指定的页面
-        historyApiFallback:{
+        historyApiFallback: {
             index: '/dist/index.html'
         },
         proxy : {
@@ -102,6 +102,5 @@ module.exports = {
                 changeOrigin : true
             }
         }
-    }
-    
+    }    
 };
