@@ -17,7 +17,7 @@ class MUtil {
                         typeof rejects === 'function' && rejects(res.msg || res.data);
                     }
                 },
-                // 异常处理
+                //异常处理
                 error:err => {
                     typeof rejects === 'function' && rejects(err.statusText);
                 }

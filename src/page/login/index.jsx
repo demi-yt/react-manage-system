@@ -43,38 +43,25 @@ class Login extends React.Component{
     }
 
     // 登录点击事件
-    onSubmit() {
-        console.log("123")
-        _index.request({
-            type:'post',
-            url:'/manage/user/login.do',
-            data:{
-                username: this.state.username,
-                password: this.state.password
-            }
-        }).then((res) => {
-            console.log(res)
-        },(err) => {
-
-        });
-        // let loginInfo ={
-        //     username : this.state.username,
-        //     password : this.state.password
-        // },
-        // checkResult = _user.checkLoginInfo(loginInfo); // 校验返回值
-        // if(checkResult.status) {
-        //     // 验证通过登录
-        //     _user.login(loginInfo).then((res) => {
-        //         // 本地存储用户登录信息
-        //         _index.setStorage('userInfo',res);
-        //         // 路由跳转
-        //         //this.props.history.push(this.state.redirect);
-        //     },(errMsg) => {
-        //         _index.errorTips(errMsg);
-        //     });
-        // }else{
-        //     _index.errorTips(checkResult.msg);
-        // }
+    onSubmit() {       
+        let loginInfo ={
+            username : this.state.username,
+            password : this.state.password
+        },
+        checkResult = _user.checkLoginInfo(loginInfo); // 校验返回值
+        if(checkResult.status) {
+            // 验证通过登录
+            _user.login(loginInfo).then((res) => {
+                // 本地存储用户登录信息
+                _index.setStorage('userInfo',res);
+                // 路由跳转
+                this.props.history.push(this.state.redirect);
+            },(errMsg) => {
+                _index.errorTips(errMsg);
+            });
+        }else{
+            _index.errorTips(checkResult.msg);
+        }
     }
 
     render() {
@@ -86,7 +73,7 @@ class Login extends React.Component{
                             <h3 className="panel-title">欢迎登录 - MMALL管理系统</h3>
                         </div>
                         <div className="panel-body">                        
-                            <form role="form">
+                            <div>
                                 <div className="form-group">
                                     <input type="text" className="form-control" name="username" placeholder="请输入用户名"
                                         onKeyUp={e => this.onInputKeyUp(e)}
@@ -99,7 +86,7 @@ class Login extends React.Component{
                                 </div>
                                 <button type="submit" className="btn btn-lg btn-primary btn-block"
                                     onClick={e => {this.onSubmit(e)}}>登录</button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
