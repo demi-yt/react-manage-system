@@ -10,6 +10,8 @@ import Login from './page/login/index.jsx';
 import Home from './page/home/index.jsx';
 // 用户列表
 import User from './page/user/index.jsx';
+ // 订单管理
+ import Order from './page/order/index.jsx';
 class App extends React.Component{
     render() {
         return(
@@ -22,7 +24,7 @@ class App extends React.Component{
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/product" component={Home}/>
                                 <Route exact path="/product-category" component={Home}/>
-                                <Route exact path="/order" component={Home}/>
+                                <Route exact path="/order" component={Order}/>
                                 <Route exact path="/user" component={User}/>
                             </Switch> 
                         </Layout>    
