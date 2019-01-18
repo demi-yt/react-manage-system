@@ -12,6 +12,9 @@ import Home from './page/home/index.jsx';
 import User from './page/user/index.jsx';
  // 订单管理
  import Order from './page/order/index.jsx';
+ // 订单管理详情
+ import OrderDetail from './page/order/detail.jsx';
+ 
 class App extends React.Component{
     render() {
         return(
@@ -22,10 +25,11 @@ class App extends React.Component{
                         <Layout>
                             <Switch>
                                 <Route exact path="/" component={Home}/>
-                                <Route exact path="/product" component={Home}/>
-                                <Route exact path="/product-category" component={Home}/>
-                                <Route exact path="/order" component={Order}/>
-                                <Route exact path="/user" component={User}/>
+                                <Route  path="/product" component={Home}/>
+                                <Route  path="/product-category" component={Home}/>
+                                <Route  path="/order/detail/:orderNumber" component={OrderDetail}/>
+                                <Route  path="/order" component={Order}/>
+                                <Route  path="/user" component={User}/>
                             </Switch> 
                         </Layout>    
                     )}/>

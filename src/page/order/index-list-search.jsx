@@ -38,7 +38,7 @@ class ListSrarch extends React.Component{
                             onKeyUp={(e) => this.onSearchKeywordKeyUp(e)}
                             onChange={(e) => this.onValueChange(e)}/>
                     </div>
-                    <button className="btn btn-primary" 
+                    <button className="btn btn-primary btn-search" 
                         onClick={(e) => this.onSearch()}>搜索</button>
                 </div>
             </div>
