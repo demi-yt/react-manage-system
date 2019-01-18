@@ -14,6 +14,8 @@ import User from './page/user/index.jsx';
  import Order from './page/order/index.jsx';
  // 订单管理详情
  import OrderDetail from './page/order/detail.jsx';
+// 商品路由
+import ProductRouter from './page/product/router.jsx';
  
 class App extends React.Component{
     render() {
@@ -25,7 +27,7 @@ class App extends React.Component{
                         <Layout>
                             <Switch>
                                 <Route exact path="/" component={Home}/>
-                                <Route  path="/product" component={Home}/>
+                                <Route  path="/product" component={ProductRouter}/>
                                 <Route  path="/product-category" component={Home}/>
                                 <Route  path="/order/detail/:orderNumber" component={OrderDetail}/>
                                 <Route  path="/order" component={Order}/>

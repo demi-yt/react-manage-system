@@ -42,7 +42,7 @@ class NavTop extends React.Component{
         return (
             <div className="navbar navbar-default top-navbar">
                 <div className="navbar-header">
-                    <Link className="navbar-brand" to="/">MMALL</Link>
+                    <Link className="navbar-brand" to="/">DEMI</Link>
                 </div>
                 <ul className="nav navbar-top-links navbar-right">
                     <li className="dropdown">
