@@ -27,6 +27,7 @@
     "rc-pagination": "1.15.1",
     "react": "16.5.2",
     "react-dom": "^16.5.2",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "simditor": "^2.3.6"
   }
 }
