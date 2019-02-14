@@ -8,7 +8,7 @@ const _product = new Product();
 import './category-selector.scss';
 
 // 品类选择器
-class CategorySelect extends React.Component{
+class CategorySelector extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -43,26 +43,27 @@ class CategorySelect extends React.Component{
             });
         }
     }
-    // 加载一级菜单
-    loadFirstCategory() {
-        _product.getCategoryList().then(res => {
-            this.setState({
-                firstCategoryList : res
-            },errMsg => {
+        // 加载一级分类
+        loadFirstCategory(){
+            _product.getCategoryList().then(res => {
+                this.setState({
+                    firstCategoryList : res
+                });
+            }, errMsg => {
                 _index.errorTips(errMsg);
             });
-        });
-    }
-    // 加载二级分类
-    loadSecondCategory() {
-        _product.getCategoryList(this.state.firstCategoryId).then(res => {
-            this.setState({
-                secondCategoryList = res
-            },errMsg => {
+        }
+        // 加载二级分类
+        loadSecondCategory(){
+            _product.getCategoryList(this.state.firstCategoryId).then(res => {
+                this.setState({
+                    secondCategoryList : res
+                });
+            }, errMsg => {
                 _index.errorTips(errMsg);
             });
-        });
-    }
+        }
+    
     // 选择一级品类
     onFirstCategoryChange(e) {
         if(this.props.readOnly) {

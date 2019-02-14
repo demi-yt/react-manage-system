@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-ro
 // 页面
 
 import ProductList from './index/index.jsx'
+import ProductDetail from './index/detail.jsx'
+
 
 class ProductRouter extends React.Component{
     render() {
         return (
             <Switch>
                 <Route path="/product/index" component={ProductList}/>
+                <Route path="/product/detail/:pid" component={ProductDetail}/>
                 <Redirect exact from="/product" to="/product/index"/>
             </Switch>
         )
